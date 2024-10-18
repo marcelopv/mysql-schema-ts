@@ -58,4 +58,3 @@ typings/
 .env
 
 /migrations
-/dist
