@@ -1,11 +1,11 @@
 'use strict'
 Object.defineProperty(exports, '__esModule', { value: true })
-const mysql_1 = require('mysql')
+const mysql2_1 = require('mysql2')
 const mysql_client_1 = require('../src/mysql-client')
 const src_1 = require('../src')
 const sql_template_strings_1 = require('sql-template-strings')
 const connectionString = 'mysql://root@localhost:3306/test'
-const conn = mysql_1.createConnection(connectionString)
+const conn = mysql2_1.createConnection(connectionString)
 const agreements = sql_template_strings_1.SQL`
   CREATE TABLE IF NOT EXISTS agreements (                 
     id varbinary(24) NOT NULL,              

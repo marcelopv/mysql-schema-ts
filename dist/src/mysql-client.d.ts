@@ -1,4 +1,4 @@
-import { Connection } from 'mysql'
+import { Connection } from 'mysql2'
 import { Table } from './typescript'
 import { SQLStatement } from 'sql-template-strings'
 export declare type Enums = {

@@ -1,4 +1,4 @@
-import { createConnection, Connection, MysqlError } from 'mysql'
+import { createConnection, Connection, QueryError } from 'mysql2'
 import { parse as urlParse } from 'url'
 import { Table } from './typescript'
 import { mapColumn } from './column-map'
@@ -34,11 +34,11 @@ export type Enums = { [key: string]: string[] }
 
 export function query<T>(conn: Connection, sql: SQLStatement): Promise<T[]> {
   return new Promise((resolve, reject) => {
-    conn.query(sql.sql, sql.values, (error: MysqlError | null, results: Array<T>) => {
+    conn.query(sql.sql, sql.values, (error: QueryError | null, results) => {
       if (error) {
         return reject(error)
       }
-      return resolve(results)
+      return resolve(results as Array<T>)
     })
   })
 }

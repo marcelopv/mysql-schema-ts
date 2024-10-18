@@ -1,6 +1,6 @@
 'use strict'
 Object.defineProperty(exports, '__esModule', { value: true })
-const mysql_1 = require('mysql')
+const mysql2_1 = require('mysql2')
 const url_1 = require('url')
 const column_map_1 = require('./column-map')
 const sql_template_strings_1 = require('sql-template-strings')
@@ -24,7 +24,7 @@ exports.query = query
 class MySQL {
   constructor(connectionString) {
     var _a
-    this.connection = mysql_1.createConnection(connectionString)
+    this.connection = mysql2_1.createConnection(connectionString)
     const database =
       ((_a = url_1.parse(connectionString, true).pathname) === null || _a === void 0 ? void 0 : _a.substr(1)) ||
       'public'

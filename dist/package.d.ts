@@ -26,7 +26,7 @@ declare const _exports: {
     camelcase: string
     lodash: string
     meow: string
-    mysql: string
+    mysql2: string
     prettier: string
     'sql-template-strings': string
   }
